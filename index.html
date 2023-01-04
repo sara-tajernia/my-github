@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My github</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+<body style="background-color:#1B2028">
+    <video autoplay muted loop id="myVideo">
+    <source src="assets/Octocat_video.mov" type="video/mp4">
+    Your browser does not support HTML5 video.
+    </video>
+
+    <div class="float-parent-element">
+        <div class="float-child-element1">
+            <div class="content">
+                <dev class="profile-info">
+                    <img src="assets/profile.jpg" alt="profile" id="avatar-url">
+                    <div class="info">
+                        <h3 id="name">Name</h3>
+                        <a id="blog">Address link</a>
+                        <h3 id="location">Country/City</h3>
+                    </div>
+                </dev>
+                <div class="education">
+                    <h4 id="bio" style="white-space: pre-line">Bio</h4>
+                </div>
+            </div>    
+        </div>
+        <div class="float-child-element2">
+            <div class="content2">
+                <form id="submit-btn">
+                    <input type="text" placeholder="Github Username" id="user-id">
+                    <div>
+                        <button class="submit" role="button" type="submit"><span class="text">Submit</span></button>
+                    </div>
+                </form> 
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div id=not-found class="blur">
+        <div class="modal" >
+            <div class="close-pos"><span id="not-found-btn" class="close" title="Close Modal">&times;</span> </div>
+            <div class="modal-content">
+                <h4>This username was not found</h4>
+                <img src="assets/not_found2.png" class="logos">   
+            </div>
+
+        </div>
+    </div>
+
+
+    <div id=server-error class="blur">
+        <div class="modal" >
+            <div class="close-pos"><span id="server_error-btn" class="close" title="Close Modal">&times;</span> </div>
+            <div class="modal-content">
+                <h4>Internet Disconnected</h4>
+                <img src="assets/error_server.png" class="logos">   
+            </div>
+
+        </div>
+    </div>
+
+    <div id=local-storage class="blur">
+        <div class="modal" >
+            <div class="close-pos"><span id="local-storage-btn" class="close" title="Close Modal">&times;</span> </div>
+            <div class="modal-content">
+                <h4>Data loaded from local storage</h4>
+                <img src="assets/local_storage.png" class="logos">   
+            </div>
+
+        </div>
+    </div>
+
+    
+    <script src="app.js"></script>
+</body>
+</html>
