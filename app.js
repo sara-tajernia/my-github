@@ -14,7 +14,6 @@ function server_error() {
  * remove localstorage modal
  */
 function local_storage1() {
-  console.log("sara");
   document.getElementById("local-storage").style.display = "none";
 }
 /**
@@ -57,10 +56,14 @@ async function getinfo(e) {
   if (username in localStorage) {
     var data = localStorage.getItem(username);
     data = JSON.parse(data);
-    console.log(data);
     document.getElementById("avatar-url").src = data.avatar_url;
     document.getElementById("name").innerHTML = data.name;
-    document.getElementById("blog").setAttribute("href", data.blog);
+    if (data.blog != "") {
+      document.getElementById("blog").setAttribute("href", data.blog);
+    }
+    else{
+      document.getElementById("blog").innerHTML = "";
+    }
     document.getElementById("location").innerHTML = data.location;
     document.getElementById("bio").innerHTML = data.bio;
     document.getElementById("location").innerHTML = data.location;
@@ -93,7 +96,6 @@ async function getinfo(e) {
       var lang = "";
       for (let i = 0; i < languages.length; i++) {
         for (key in languages[i]) {
-          console.log(languages[i][key], key);
           if (languages[i][key] > max) {
             max = languages[i][key];
             lang = key;
@@ -104,13 +106,12 @@ async function getinfo(e) {
     //   change page content
       document.getElementById("avatar-url").src = data.avatar_url;
       document.getElementById("name").innerHTML = data.name;
-      // if (data.blog != "") {
-      //   document.getElementById("blog").setAttribute("href", data.blog);
-      // }
-      // else{
-      //   document.getElementById("blog").innerHTML = "No blog";
-      // }
-      document.getElementById("blog").setAttribute("href", data.blog);
+      if (data.blog != "") {
+        document.getElementById("blog").setAttribute("href", data.blog);
+      }
+      else{
+        document.getElementById("blog").innerHTML = "";
+      }
       document.getElementById("location").innerHTML = data.location;
       document.getElementById("bio").innerHTML = data.bio;
       document.getElementById("lang").innerHTML = 'Favorite language: ' + data.lang;
@@ -118,7 +119,8 @@ async function getinfo(e) {
     // set local storage
       localStorage.setItem(username, JSON.stringify(data));
     } else {
-      // if (request.status == 404) {
+      if (request.status == 404) {
+        console.log("error");
         not_found = document.getElementById("not-found").style.display = "block";
         document.getElementById("avatar-url").src = "assets/profile.jpg";
         document.getElementById("name").innerHTML = "Name";
@@ -126,17 +128,7 @@ async function getinfo(e) {
         document.getElementById("location").innerHTML = "Country/City";
         document.getElementById("bio").innerHTML = "Bio";
         document.getElementById("lang").innerHTML = "Favorite language";
-      // }
-      console.log("error");
-    //   change page content for error handling
-      // not_found = document.getElementById("not-found").style.display = "block";
-      // document.getElementById("avatar-url").src = "assets/profile.jpg";
-      // document.getElementById("name").innerHTML = "Name";
-      // document.getElementById("blog").innerHTML = "Address link";
-      // document.getElementById("location").innerHTML = "Country/City";
-      // document.getElementById("bio").innerHTML = "Bio";
-      // document.getElementById("lang").innerHTML = "Favorite language";
-      // close = document.getElementById('signup').style.display='none'
+      }
     }
   }
 }
