@@ -31,7 +31,7 @@ body {
 /* Style the top navigation links */
 .float-child-element1 { 
     float: left; 
-    width: 50%;
+    width: 60%;
     margin: 10% 0 0 10%; 
 
 } 
@@ -76,9 +76,16 @@ body {
     font-size: 25px;
 }
 
+/* Style of bio */
 #bio {
-    padding: 8%;
+    padding: 8% 0 0 8%;
 }
+
+/* Style of favorite language */
+#lang{
+    padding: 2% 0 4% 8%;
+}
+
 /* Add a black to the top navigation */
 .float-child-element2 { 
     float: left; 
@@ -128,12 +135,12 @@ body {
   font-size: 20px;
 }
 
-/* /* Style to  */
+/* Style for activate submit buttun  */
 .submit:active,
 .submit:hover {
   outline: 0;
 }
-
+/* Style for submit button text */
 .submit span {
   background-color: rgb(5, 6, 45);
   padding: 16px 34px;
@@ -142,12 +149,12 @@ body {
   height: 100%;
   transition: 300ms;
 }
-
+/* Style for submit button hove */
 .submit:hover span {
   background: none;
 }
 
-
+/* Style for modal blur back */
 .blur {
     display: none; 
     position: absolute; 
@@ -161,6 +168,7 @@ body {
     padding-top: 60px;
 }
 
+/* Style for all modals */
 .modal {
     margin: 10% auto 10% auto; 
     background-color: rgb(255, 255, 255);
@@ -172,11 +180,13 @@ body {
     padding: 10px;
 }
 
+/* Style for close button */
 .close-pos {
     position: relative;
     height: 30px;
 }
 
+/* Style for close button(inside) */
 .close{
     right: 10px;
     top: 0;
@@ -184,12 +194,12 @@ body {
     font-size: 33px;
     font-weight: bold;
 }
-
+/* Style for modal content */
 .modal-content {
     text-align: center;
 
 }
-
+/* Style of logos in alert types*/
 .logos{
     width: 30%;
 }
